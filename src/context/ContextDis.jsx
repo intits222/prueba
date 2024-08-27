@@ -1,5 +1,5 @@
 import { createContext, useReducer, useState } from "react";
-import { library } from "../../../books/books.json"
+import { library } from "../service/books.json"
 import { reducerDis } from "../reducers/reducerDis";
 
 export const ContextDis = createContext()
@@ -8,7 +8,7 @@ const ContextDisProvider = ({children}) => {
     const [initialState, dispatch] = useReducer(reducerDis, library)
     const [filter, setFilter] = useState({
         genre: "all",
-        pages: 400
+        pages: 0
 
     })
 
